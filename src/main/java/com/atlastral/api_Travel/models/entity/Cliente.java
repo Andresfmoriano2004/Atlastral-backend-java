@@ -23,10 +23,10 @@ public class Cliente implements Serializable {
     private Integer idCliente;
 
     @Column(name = "nombre")
-    private Integer nombre;
+    private String nombre;
 
     @Column (name = "email")
-    private Integer email;
+    private String email;
 
     @Column (name = "contrasena")
     private Integer contrasena;
