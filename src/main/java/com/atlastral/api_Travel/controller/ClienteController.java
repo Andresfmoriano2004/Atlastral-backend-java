@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping ("/api/v1") //nomenclatura y version de la api
 
-
 public class ClienteController {
 
     @Autowired
@@ -29,7 +28,6 @@ public class ClienteController {
         Cliente clienteDelete = clienteService.findById(id);
         clienteService.delete(clienteDelete);
     }
-
 
     @GetMapping ("cliente/{id}")
     public Cliente showById (@PathVariable Integer id){
