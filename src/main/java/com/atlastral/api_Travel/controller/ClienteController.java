@@ -13,14 +13,13 @@ public class ClienteController {
     @Autowired
     private Icliente clienteService;
 
-
     @PostMapping ("cliente")
     public Cliente create(@RequestBody Cliente cliente){
         return clienteService.save(cliente);
     }
 
     @PutMapping("cliente")
-    public Cliente update(Cliente cliente){
+    public Cliente update(@RequestBody Cliente cliente){
         return clienteService.save(cliente);
     }
 
