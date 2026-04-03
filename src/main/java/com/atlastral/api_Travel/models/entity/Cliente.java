@@ -29,7 +29,7 @@ public class Cliente implements Serializable {
     private String email;
 
     @Column (name = "contrasena")
-    private Integer contrasena;
+    private String contrasena;
 
 
 

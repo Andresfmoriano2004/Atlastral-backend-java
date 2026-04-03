@@ -4,6 +4,7 @@ import com.atlastral.api_Travel.models.dao.ClienteDao;
 import com.atlastral.api_Travel.models.entity.Cliente;
 import com.atlastral.api_Travel.service.Icliente;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,10 +15,14 @@ public class ClienteImple  implements Icliente {
     @Autowired
     private ClienteDao clienteDao;
 
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
     @Transactional
     @Override
     public Cliente save(Cliente cliente) {
-
+        String contrasenaEncriptada = passwordEncoder.encode(cliente.getContrasena());
+        cliente.setContrasena(contrasenaEncriptada);
         return clienteDao.save(cliente);
     }
 
